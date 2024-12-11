@@ -30,7 +30,7 @@ public LandingPageStepDefinition(TestContextSetup testContextSetup)
 }
 	@Given("User is on GreenCart Landing page")
 public void user_is_on_green_cart_landing_page() {
-		
+		System.out.println(landingPage.getTitleLandingPage());
 		Assert.assertTrue(landingPage.getTitleLandingPage().contains("GreenKart"));
 }
 
@@ -40,7 +40,7 @@ public void user_is_on_green_cart_landing_page() {
 		landingPage.searchItem(shortName);
 		Thread.sleep(2000);
 		testContextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();
-		System.out.println(landingPageProductName +" is extracted from Home page");
+		System.out.println(testContextSetup.landingPageProductName +" is extracted from Home page");
 			
 }
 
